@@ -8,9 +8,17 @@
   "license": "MIT",
   "scripts": {
     "start": "ts-node src/main.ts",
-    "build": "tsc -p ."
+    "precommit": "lint-staged",
+    "build": "tsc -p .",
+    "lint-schema": "graphql-schema-linter --comment-descriptions schemas/*.graphql"
+  },
+  "lint-staged": {
+    "*.graphql": ["graphql-schema-linter --comment-descriptions schemas/*.graphql"]
   },
   "devDependencies": {
+    "graphql-schema-linter": "^0.4.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.9",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.5"
   },

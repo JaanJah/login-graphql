@@ -1,0 +1,12 @@
+# https://github.com/cjoudrey/graphql-schema-linter
+{
+  "rules": [
+    "defined-types-are-used",
+    "deprecations-have-a-reason",
+    "enum-values-have-descriptions",
+    "fields-have-descriptions",
+    "input-object-values-have-descriptions",
+    "types-are-capitalized",
+    "types-have-descriptions"
+  ]
+}

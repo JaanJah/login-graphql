@@ -1,5 +1,7 @@
 # import * from 'input.graphql'
 
+# Query
 type Query {
+    # Test query
     hello: String
 }

@@ -1,5 +1,9 @@
+# Input required for signup
 input SignupInput {
+    # Account username
     username: String!
+    # Account password
     password: String!
+    # Account email
     email: String!
 }

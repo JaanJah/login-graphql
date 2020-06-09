@@ -1,10 +1,15 @@
 # import * from 'input.graphql'
 
+# Mutations
 type Mutation {
+    # Create a new account
     signup(input: SignupInput!): SignupResult!
 }
 
+# Result from signup
 type SignupResult {
+    # Was signup successful
     status: Boolean!
+    # JWT token for authentication
     token: String
 }
