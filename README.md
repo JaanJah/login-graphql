@@ -9,4 +9,10 @@ You need to have [Node.js](https://nodejs.org/en/) and [Yarn](https://yarnpkg.co
 ```bash
 # Install packages
 yarn install
+
+# Start project
+yarn start
+
+# Build project
+yarn build
 ```

@@ -1,11 +1,17 @@
 {
   "name": "login-graphql",
   "version": "1.0.0",
-  "main": "src/index.ts",
+  "main": "src/main.ts",
+  "description": "A simple login system",
   "repository": "https://github.com/JaanJah/login-graphql",
   "author": "JaanJahimees <jaanjahilo@outlook.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "ts-node src/main.ts",
+    "build": "tsc -p ."
+  },
   "devDependencies": {
+    "ts-node": "^8.10.2",
     "typescript": "^3.9.5"
   }
 }
