@@ -1,0 +1,10 @@
+# import * from 'input.graphql'
+
+type Mutation {
+    signup(input: SignupInput!): SignupResult!
+}
+
+type SignupResult {
+    status: Boolean!
+    token: String
+}
