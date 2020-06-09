@@ -1,0 +1,11 @@
+{
+  "name": "login-graphql",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "repository": "https://github.com/JaanJah/login-graphql",
+  "author": "JaanJahimees <jaanjahilo@outlook.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.9.5"
+  }
+}
