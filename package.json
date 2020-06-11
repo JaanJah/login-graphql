@@ -7,11 +7,14 @@
   "author": "JaanJahimees <jaanjahilo@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node src/main.ts",
+    "start": "env-cmd -f .env ts-node src/main.ts",
     "precommit": "lint-staged",
     "build": "tsc -p .",
     "lint-schema": "graphql-schema-linter --comment-descriptions schemas/*.graphql",
-    "codegen": "graphql-codegen --config codegen.yml"
+    "codegen": "graphql-codegen --config codegen.yml",
+    "migrate:up": "env-cmd -f .env knex migrate:up",
+    "migrate:down": "env-cmd -f .env knex migrate:down",
+    "migrate:make": "knex migrate:make -x ts"
   },
   "lint-staged": {
     "*.graphql": [
@@ -23,6 +26,7 @@
     "@graphql-codegen/introspection": "1.15.2",
     "@graphql-codegen/typescript": "^1.15.2",
     "@graphql-codegen/typescript-resolvers": "1.15.2",
+    "env-cmd": "^10.1.0",
     "graphql-schema-linter": "^0.4.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.9",
@@ -32,6 +36,8 @@
   "dependencies": {
     "@graphql-tools/graphql-file-loader": "^6.0.9",
     "@graphql-tools/load": "^6.0.9",
-    "apollo-server-express": "^2.14.3"
+    "apollo-server-express": "^2.14.3",
+    "knex": "^0.21.1",
+    "mysql": "^2.18.1"
   }
 }
