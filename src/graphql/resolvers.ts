@@ -1,10 +1,16 @@
+// Commands
+
+// Resolvers
+
+// Types
+import {MutationSignupArgs} from "./types";
+
 const resolvers = {
     Query: {
         hello: () => 'Hello world!',
     },
     Mutation: {
-        // TODO: Use proper types and add functionality
-        signup: (input: any) => {
+        signup: (root: any, input: MutationSignupArgs, context: any) => {
             return {
                 status: true,
                 token: null,

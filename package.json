@@ -10,12 +10,19 @@
     "start": "ts-node src/main.ts",
     "precommit": "lint-staged",
     "build": "tsc -p .",
-    "lint-schema": "graphql-schema-linter --comment-descriptions schemas/*.graphql"
+    "lint-schema": "graphql-schema-linter --comment-descriptions schemas/*.graphql",
+    "codegen": "graphql-codegen --config codegen.yml"
   },
   "lint-staged": {
-    "*.graphql": ["graphql-schema-linter --comment-descriptions schemas/*.graphql"]
+    "*.graphql": [
+      "graphql-schema-linter --comment-descriptions schemas/*.graphql"
+    ]
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "1.15.2",
+    "@graphql-codegen/introspection": "1.15.2",
+    "@graphql-codegen/typescript": "^1.15.2",
+    "@graphql-codegen/typescript-resolvers": "1.15.2",
     "graphql-schema-linter": "^0.4.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.9",

@@ -1,0 +1,9 @@
+overwrite: true
+schema:
+  - "./schemas/*.graphql"
+generates:
+  ./src/graphql/types.ts:
+    plugins:
+      - "typescript"
+require:
+  - "ts-node/register"
