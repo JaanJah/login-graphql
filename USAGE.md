@@ -11,6 +11,17 @@ Example:
 }
 ```
 
+## List of queries and mutations:
+
+### Mutations
+1. [`signup` mutation](#signup)
+2. [`login` mutation](#login)
+3. [`deleteUser` mutation](#delete-user)
+4. [`updateUser` mutation](#update-user)
+
+### Queries
+1. [`getUser` query](#get-user-info)
+
 ## Signup
 
 Create a new account with `signup` mutation.
