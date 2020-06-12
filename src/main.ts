@@ -6,7 +6,14 @@ import getSchema from "./util/getSchema";
 const app = express();
 
 // Create ApolloServer
-const server = new ApolloServer({ schema: getSchema()});
+const server = new ApolloServer({
+    schema: getSchema(),
+    context: ({ req}) => {
+        // Get token from HTTP header and pass it to context
+        return {
+            token: req.headers.authorization
+        }
+    }});
 
 // Add express.js ass middleware for ApolloServer
 server.applyMiddleware({ app });

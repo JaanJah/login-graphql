@@ -2,6 +2,14 @@
 
 # Query
 type Query {
-    # Test query
-    hello: String
+    # Get logged in user
+    getUser: UserResult!
+}
+
+# User information
+type UserResult {
+    # Users' name
+    username: String!
+    # Users' email
+    email: String!
 }

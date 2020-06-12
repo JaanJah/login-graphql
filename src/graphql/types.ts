@@ -48,5 +48,11 @@ export type LoginResult = {
 
 export type Query = {
   __typename?: 'Query';
-  hello?: Maybe<Scalars['String']>;
+  getUser: UserResult;
+};
+
+export type UserResult = {
+  __typename?: 'UserResult';
+  email: Scalars['String'];
+  username: Scalars['String'];
 };

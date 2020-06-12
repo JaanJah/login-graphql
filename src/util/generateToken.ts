@@ -1,5 +1,6 @@
 import * as jwt from 'jsonwebtoken';
 import database from "./database";
+import {JWT_SECRET} from "./config";
 
 export default async (userId: any) => {
     try {
@@ -8,7 +9,7 @@ export default async (userId: any) => {
             {
             userId,
         },
-            process.env.JWT_SECRET as string,
+            JWT_SECRET,
             {
                 issuer: 'login-graphql',
                 expiresIn: '1y'

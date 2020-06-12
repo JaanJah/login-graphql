@@ -7,14 +7,19 @@ import login from "../resolvers/login";
 
 // Types
 import {MutationLoginArgs, MutationSignupArgs} from "./types";
+import getUser from "../resolvers/getUser";
 
 const resolvers = {
     Query: {
-        hello: () => 'Hello world!',
+        getUser: (root: any, input: any, context: any) => getUser(context),
     },
     Mutation: {
-        signup: (root: any, input: MutationSignupArgs, context: any) => signup(input),
-        login: (root: any, input: MutationLoginArgs, context: any) => login(input),
+        signup: (root: any, input: MutationSignupArgs) => signup(input),
+        login: (root: any, input: MutationLoginArgs) => login(input),
+    },
+    UserResult: {
+        username: (user: any) => user.name,
+        email: (user: any) => user.email,
     },
     SignupResult: {
         status: (root: any) => !!root,
