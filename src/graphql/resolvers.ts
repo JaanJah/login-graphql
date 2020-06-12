@@ -6,9 +6,10 @@ import signup from "../resolvers/signup";
 import login from "../resolvers/login";
 
 // Types
-import {MutationLoginArgs, MutationSignupArgs} from "./types";
+import {MutationLoginArgs, MutationSignupArgs, MutationUpdateUserArgs} from "./types";
 import getUserFromToken from "../commands/getUserFromToken";
 import deleteUser from "../resolvers/deleteUser";
+import updateUser from "../resolvers/updateUser";
 
 const resolvers = {
     Query: {
@@ -18,6 +19,7 @@ const resolvers = {
         signup: (root: any, input: MutationSignupArgs) => signup(input),
         login: (root: any, input: MutationLoginArgs) => login(input),
         deleteUser: (root: any, input: any, context: any) => deleteUser(context),
+        updateUser: (root: any, input: MutationUpdateUserArgs, context: any) => updateUser(input, context),
     },
     UserResult: {
         username: (user: any) => user.name,
@@ -31,8 +33,11 @@ const resolvers = {
         token: (root: any) => generateToken(root),
     },
     DeleteResult: {
-        status: (root: any) => root
-    }
+        status: (root: any) => root,
+    },
+    UpdateResult: {
+        status: (root: any) => root,
+    },
 };
 
 export default resolvers;

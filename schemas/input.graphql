@@ -8,9 +8,22 @@ input SignupInput {
     email: String!
 }
 
+# Input required for login
 input LoginInput {
     # Login username
     username: String!
     # Login password
     password: String!
+}
+
+# Input for data you want to update
+input UpdateUserInput {
+    # New username
+    username: String
+    # Old password
+    password: String
+    # New Password
+    newPassword: String
+    # New Email
+    email: String
 }

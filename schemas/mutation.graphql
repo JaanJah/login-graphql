@@ -8,6 +8,8 @@ type Mutation {
     login(input: LoginInput!): LoginResult!
     # Delete account
     deleteUser: DeleteResult!
+    # Update account
+    updateUser(input: UpdateUserInput!): UpdateResult!
 }
 
 # Result from signup
@@ -27,5 +29,11 @@ type LoginResult {
 # Result from deleteUser
 type DeleteResult {
     # Was account deletion successful
+    status: Boolean!
+}
+
+# Result from updateUser
+type UpdateResult {
+    # Was account updating successful
     status: Boolean!
 }

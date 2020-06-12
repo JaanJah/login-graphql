@@ -122,3 +122,34 @@ Response:
   }
 }
 ```
+
+## Update user
+
+You can update your account information using `updateUser` mutation.
+
+This endpoint required Bearer token in HTTP Authorization header.
+
+Request:
+```graphql
+mutation {
+  updateUser(input: {
+    username: "JaneDoe18",
+    password: "SecurePassword",
+    newPassword: "MoreSecurePassword",
+    email: "mynewemail@yahoo.com"
+  }) {
+    status
+  }
+}
+```
+
+Response:
+```json
+{
+  "data": {
+    "updateUser": {
+      "status": true
+    }
+  }
+}
+```

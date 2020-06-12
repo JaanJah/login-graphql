@@ -13,7 +13,11 @@ export default async ({ input }: MutationSignupArgs) => {
         throw new Error(`Password must be at least 8 characters long.`);
     }
 
-    const email = validate(input.email);
+    const validEmail = validate(input.email);
+
+    if (!validEmail) {
+        throw new Error('Email is invalid');
+    }
 
     // Check if user with that email/name exists
     const match = await findUserByNameAndEmail(username, input.email);

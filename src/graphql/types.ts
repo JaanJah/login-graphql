@@ -19,11 +19,19 @@ export type LoginInput = {
   username: Scalars['String'];
 };
 
+export type UpdateUserInput = {
+  email?: Maybe<Scalars['String']>;
+  newPassword?: Maybe<Scalars['String']>;
+  password?: Maybe<Scalars['String']>;
+  username?: Maybe<Scalars['String']>;
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   deleteUser: DeleteResult;
   login: LoginResult;
   signup: SignupResult;
+  updateUser: UpdateResult;
 };
 
 
@@ -34,6 +42,11 @@ export type MutationLoginArgs = {
 
 export type MutationSignupArgs = {
   input: SignupInput;
+};
+
+
+export type MutationUpdateUserArgs = {
+  input: UpdateUserInput;
 };
 
 export type SignupResult = {
@@ -49,6 +62,11 @@ export type LoginResult = {
 
 export type DeleteResult = {
   __typename?: 'DeleteResult';
+  status: Scalars['Boolean'];
+};
+
+export type UpdateResult = {
+  __typename?: 'UpdateResult';
   status: Scalars['Boolean'];
 };
 
