@@ -7,3 +7,10 @@ input SignupInput {
     # Account email
     email: String!
 }
+
+input LoginInput {
+    # Login username
+    username: String!
+    # Login password
+    password: String!
+}

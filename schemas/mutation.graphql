@@ -4,12 +4,20 @@
 type Mutation {
     # Create a new account
     signup(input: SignupInput!): SignupResult!
+    # Login
+    login(input: LoginInput!): LoginResult!
 }
 
 # Result from signup
 type SignupResult {
     # Was signup successful
     status: Boolean!
-    # JWT token for authentication
+}
+
+# Result from login
+type LoginResult {
+    # Was login successful
+    status: Boolean!
+    # Authentication token
     token: String
 }

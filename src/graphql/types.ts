@@ -14,9 +14,20 @@ export type SignupInput = {
   username: Scalars['String'];
 };
 
+export type LoginInput = {
+  password: Scalars['String'];
+  username: Scalars['String'];
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
+  login: LoginResult;
   signup: SignupResult;
+};
+
+
+export type MutationLoginArgs = {
+  input: LoginInput;
 };
 
 
@@ -26,6 +37,11 @@ export type MutationSignupArgs = {
 
 export type SignupResult = {
   __typename?: 'SignupResult';
+  status: Scalars['Boolean'];
+};
+
+export type LoginResult = {
+  __typename?: 'LoginResult';
   status: Scalars['Boolean'];
   token?: Maybe<Scalars['String']>;
 };
