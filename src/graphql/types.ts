@@ -21,6 +21,7 @@ export type LoginInput = {
 
 export type Mutation = {
   __typename?: 'Mutation';
+  deleteUser: DeleteResult;
   login: LoginResult;
   signup: SignupResult;
 };
@@ -44,6 +45,11 @@ export type LoginResult = {
   __typename?: 'LoginResult';
   status: Scalars['Boolean'];
   token?: Maybe<Scalars['String']>;
+};
+
+export type DeleteResult = {
+  __typename?: 'DeleteResult';
+  status: Scalars['Boolean'];
 };
 
 export type Query = {
